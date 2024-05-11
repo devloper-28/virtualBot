@@ -183,7 +183,7 @@ def main():
   dp.add_handler(CommandHandler("reply", admin_reply))
   dp.add_handler(CallbackQueryHandler(button_callback))
 
-  updater.start_polling()
+  updater.start_polling(poll_interval=1, timeout=20, read_latency=30)
   updater.idle()
 
 
