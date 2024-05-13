@@ -10,7 +10,7 @@ from telegram.ext import (
 )
 
 # Replace 'YOUR_API_TOKEN' with your actual Telegram API token
-TOKEN = "6934887290:AAHnfnCD3-KNjjtLWOaaN9NAGvbVPt-J7cc"
+TOKEN = "6662004932:AAELBAyL_q6heVHRLEvd2h0lRU_VbaXtcDI"
 QR_CODE_IMAGE_URL = "https://wertrends.s3.eu-north-1.amazonaws.com/Image.jpg"
 ADMIN_CHAT_ID = "676637767"
 QUERY_LINK12 = "https://www.youtube.com/shorts/wC23vXpE2Hc"
