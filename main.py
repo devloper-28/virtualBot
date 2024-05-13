@@ -189,7 +189,8 @@ def main():
   dp.add_handler(CallbackQueryHandler(button_callback))
 
   PORT = int(os.environ.get("PORT", "8443"))  # Heroku assigns a port dynamically
-  updater.start_webhook(port=PORT, url_path=TOKEN)        
+  updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+  updater.bot.set_webhook(f"{heroku_url}/bot{TOKEN}")
   set_webhook()
   updater.idle()
 
