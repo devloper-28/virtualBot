@@ -1,4 +1,5 @@
 import logging
+import os
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
     Updater,
@@ -24,6 +25,10 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO,
 )
+
+def set_webhook():
+    heroku_url = os.getenv("https://virtualnumbers-5e1d085c1582.herokuapp.com")  # Get Heroku app URL from environment variables
+    updater.bot.set_webhook(f"{heroku_url}/{TOKEN}")
 
 
 def start(update: Update, context: CallbackContext):
@@ -183,7 +188,9 @@ def main():
   dp.add_handler(CommandHandler("reply", admin_reply))
   dp.add_handler(CallbackQueryHandler(button_callback))
 
-  updater.start_polling(poll_interval=1, timeout=20, read_latency=30)
+  PORT = int(os.environ.get("PORT", "8443"))  # Heroku assigns a port dynamically
+  updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)        
+  set_webhook()
   updater.idle()
 
 
