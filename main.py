@@ -18,7 +18,7 @@ QUERY_LINK12 = "https://www.youtube.com/shorts/wC23vXpE2Hc"
 QUERY_LINK123 = "https://skrill.me/rq/PRAJAPATI/650/INR?key=YWpTSOor38Z78Pxepqmb0bESSVq"
 QUERY_LINK = "https://t.me/WeRTrends_admin"
 
-APP_NAME='https://virtualnumberbot.herokuapp.com/'
+APP_NAME = 'https://virtualnumberbot-c60640ab9899.herokuapp.com/'
 PORT = int(os.environ.get('PORT', '5000'))
 
 active_users = {}
